@@ -1,0 +1,463 @@
+/* Login page */
+
+.nani-shop-login-page {
+  width: min(1080px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 68px 0 80px;
+}
+
+.nani-shop-login-layout {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--nani-shop-color-border);
+  border-radius: 30px;
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(420px, 1.1fr);
+  background-color: var(--nani-shop-color-surface);
+  box-shadow:
+    0 26px 70px var(--nani-shop-color-shadow);
+}
+
+.nani-shop-login-information {
+  padding: 58px 48px;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(99, 102, 241, 0.22),
+      transparent 48%
+    ),
+    linear-gradient(
+      145deg,
+      #eef2ff,
+      #f8faff
+    );
+}
+
+.nani-shop-login-page-title {
+  margin: 0;
+  color: var(--nani-shop-color-text);
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.nani-shop-login-page-description {
+  margin: 22px 0 0;
+  color: var(--nani-shop-color-text-soft);
+  line-height: 1.75;
+}
+
+.nani-shop-login-demo-panel {
+  margin-top: 38px;
+  padding: 22px;
+  border: 1px solid var(--nani-shop-color-border);
+  border-radius: 18px;
+  background-color: rgba(255, 255, 255, 0.74);
+}
+
+.nani-shop-login-demo-title {
+  margin: 0;
+  color: var(--nani-shop-color-text);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.nani-shop-login-demo-list {
+  margin: 15px 0 0;
+}
+
+.nani-shop-login-demo-row {
+  display: flex;
+  padding: 8px 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.nani-shop-login-demo-row dt {
+  color: var(--nani-shop-color-text-soft);
+  font-size: 0.82rem;
+}
+
+.nani-shop-login-demo-row dd {
+  margin: 0;
+  color: var(--nani-shop-color-text);
+  font-family: monospace;
+  font-size: 0.86rem;
+  font-weight: 750;
+}
+
+.nani-shop-login-demo-button {
+  min-height: 42px;
+  margin-top: 15px;
+  padding: 0 18px;
+  border: 1px solid var(--nani-shop-color-primary);
+  border-radius: 10px;
+  color: var(--nani-shop-color-primary);
+  background: transparent;
+  font-weight: 750;
+}
+
+.nani-shop-login-demo-button:hover {
+  color: #ffffff;
+  background-color: var(--nani-shop-color-primary);
+}
+
+/* Login form */
+
+.nani-shop-login-form-panel {
+  display: flex;
+  padding: 58px 48px;
+  align-items: center;
+}
+
+.nani-shop-login-form {
+  width: 100%;
+}
+
+.nani-shop-login-form-heading {
+  margin-bottom: 30px;
+}
+
+.nani-shop-login-form-title {
+  margin: 0;
+  color: var(--nani-shop-color-text);
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+}
+
+.nani-shop-login-form-description {
+  margin: 10px 0 0;
+  color: var(--nani-shop-color-text-soft);
+}
+
+.nani-shop-form-field {
+  margin-bottom: 22px;
+}
+
+.nani-shop-form-label {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--nani-shop-color-text);
+  font-size: 0.86rem;
+  font-weight: 750;
+}
+
+.nani-shop-form-input {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 15px;
+  border: 1px solid var(--nani-shop-color-border);
+  border-radius: 12px;
+  outline: none;
+  color: var(--nani-shop-color-text);
+  background-color: var(--nani-shop-color-surface);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.nani-shop-form-input:focus {
+  border-color: var(--nani-shop-color-primary);
+  box-shadow:
+    0 0 0 4px rgba(99, 102, 241, 0.14);
+}
+
+.nani-shop-form-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.nani-shop-form-input-error {
+  border-color: #dc2626;
+}
+
+.nani-shop-form-field-error {
+  margin: 7px 0 0;
+  color: #dc2626;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.nani-shop-password-control {
+  position: relative;
+}
+
+.nani-shop-password-input {
+  padding-right: 72px;
+}
+
+.nani-shop-password-toggle-button {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  min-width: 57px;
+  min-height: 36px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 8px;
+  color: var(--nani-shop-color-primary);
+  background-color: rgba(99, 102, 241, 0.12);
+  font-size: 0.76rem;
+  font-weight: 750;
+}
+
+.nani-shop-login-submit-error {
+  display: flex;
+  margin-bottom: 22px;
+  padding: 14px 16px;
+  border: 1px solid #fecaca;
+  border-radius: 11px;
+  align-items: flex-start;
+  gap: 10px;
+  color: #991b1b;
+  background-color: #fff7f7;
+}
+
+.nani-shop-login-submit-error p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.nani-shop-login-submit-button {
+  width: 100%;
+  min-height: 52px;
+  border: 0;
+  border-radius: 13px;
+  color: #ffffff;
+  background:
+    linear-gradient(
+      135deg,
+      var(--nani-shop-color-primary),
+      var(--nani-shop-color-primary-dark)
+    );
+  box-shadow:
+    0 14px 28px rgba(79, 70, 229, 0.26);
+  font-weight: 800;
+}
+
+.nani-shop-login-submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.nani-shop-login-submit-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.nani-shop-login-security-note {
+  margin: 16px 0 0;
+  color: var(--nani-shop-color-text-soft);
+  font-size: 0.75rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+/* Authenticated state */
+
+.nani-shop-authenticated-card {
+  display: flex;
+  min-height: 540px;
+  padding: 54px 30px;
+  border: 1px solid var(--nani-shop-color-border);
+  border-radius: 28px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--nani-shop-color-surface);
+  box-shadow:
+    0 24px 60px var(--nani-shop-color-shadow);
+  text-align: center;
+}
+
+.nani-shop-authenticated-user-image,
+.nani-shop-authenticated-user-fallback {
+  display: flex;
+  width: 96px;
+  height: 96px;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+  color: #ffffff;
+  background-color: var(--nani-shop-color-primary);
+  font-size: 1.4rem;
+  font-weight: 850;
+}
+
+.nani-shop-authenticated-title {
+  margin: 0;
+  color: var(--nani-shop-color-text);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: -0.05em;
+}
+
+.nani-shop-authenticated-description {
+  max-width: 620px;
+  margin: 18px 0 0;
+  color: var(--nani-shop-color-text-soft);
+  line-height: 1.7;
+}
+
+.nani-shop-authenticated-actions {
+  display: flex;
+  margin-top: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nani-shop-authenticated-logout-button {
+  min-height: 48px;
+  padding: 0 22px;
+  border: 1px solid var(--nani-shop-color-border);
+  border-radius: 12px;
+  color: var(--nani-shop-color-text);
+  background-color: var(--nani-shop-color-surface);
+  font-weight: 750;
+}
+
+/* Navigation authentication */
+
+.nani-shop-navigation-user {
+  display: flex;
+  padding-left: 12px;
+  border-left: 1px solid var(--nani-shop-color-border);
+  align-items: center;
+  gap: 8px;
+}
+
+.nani-shop-navigation-user-image,
+.nani-shop-navigation-user-fallback {
+  display: flex;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+  color: #ffffff;
+  background-color: var(--nani-shop-color-primary);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.nani-shop-navigation-user-name {
+  max-width: 90px;
+  overflow: hidden;
+  color: var(--nani-shop-color-text);
+  font-size: 0.8rem;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nani-shop-navigation-logout-button {
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--nani-shop-color-border);
+  border-radius: 9px;
+  color: var(--nani-shop-color-text-soft);
+  background-color: var(--nani-shop-color-surface);
+  font-size: 0.76rem;
+  font-weight: 750;
+}
+
+.nani-shop-navigation-logout-button:hover {
+  border-color: #dc2626;
+  color: #dc2626;
+}
+
+/* Existing dashboard/profile images */
+
+img.nani-shop-dashboard-user-avatar,
+img.nani-shop-profile-avatar {
+  object-fit: cover;
+}
+
+/* Dark mode */
+
+:root[data-theme="dark"]
+  .nani-shop-login-information {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(99, 102, 241, 0.28),
+      transparent 48%
+    ),
+    linear-gradient(
+      145deg,
+      #172033,
+      #111827
+    );
+}
+
+:root[data-theme="dark"]
+  .nani-shop-login-demo-panel {
+  background-color:
+    rgba(30, 41, 59, 0.75);
+}
+
+:root[data-theme="dark"]
+  .nani-shop-login-submit-error {
+  border-color: #7f1d1d;
+  color: #fca5a5;
+  background-color: #2a171c;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .nani-shop-login-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .nani-shop-login-information,
+  .nani-shop-login-form-panel {
+    padding: 44px 36px;
+  }
+}
+
+@media (max-width: 760px) {
+  .nani-shop-navigation-user {
+    width: 100%;
+    padding: 12px 0 0;
+    border-top: 1px solid
+      var(--nani-shop-color-border);
+    border-left: 0;
+  }
+
+  .nani-shop-navigation-user-name {
+    max-width: none;
+    flex: 1;
+  }
+}
+
+@media (max-width: 520px) {
+  .nani-shop-login-page {
+    width: min(
+      100% - 28px,
+      1080px
+    );
+    padding: 46px 0 60px;
+  }
+
+  .nani-shop-login-information,
+  .nani-shop-login-form-panel {
+    padding: 34px 22px;
+  }
+
+  .nani-shop-login-page-title {
+    font-size: 2.6rem;
+  }
+
+  .nani-shop-authenticated-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .nani-shop-authenticated-logout-button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,179 @@
+/* Header theme controls */
+
+.nani-shop-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nani-shop-theme-toggle {
+  display: inline-flex;
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--nani-shop-color-border);
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--nani-shop-color-text);
+  background-color: var(--nani-shop-color-surface);
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.nani-shop-theme-toggle:hover {
+  border-color: var(--nani-shop-color-primary);
+  color: var(--nani-shop-color-primary);
+  transform: translateY(-1px);
+}
+
+.nani-shop-theme-toggle:focus-visible {
+  outline: 3px solid rgba(99, 102, 241, 0.3);
+  outline-offset: 3px;
+}
+
+.nani-shop-theme-toggle-icon {
+  font-size: 1rem;
+}
+
+/* Smooth theme change */
+
+body,
+.nani-shop-main-header,
+.nani-shop-main-footer,
+.nani-shop-home-visual,
+.nani-shop-stage-placeholder,
+.nani-shop-dashboard-container,
+.nani-shop-dashboard-sidebar,
+.nani-shop-dashboard-header,
+.nani-shop-dashboard-stat-card,
+.nani-shop-profile-card,
+.nani-shop-dashboard-form-placeholder {
+  transition:
+    color 200ms ease,
+    border-color 200ms ease,
+    background-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+/* Dark theme variables */
+
+:root[data-theme="dark"] {
+  color: #e5e7eb;
+  background-color: #0f172a;
+
+  --nani-shop-color-primary: #818cf8;
+  --nani-shop-color-primary-dark: #6366f1;
+  --nani-shop-color-text: #e5e7eb;
+  --nani-shop-color-text-soft: #94a3b8;
+  --nani-shop-color-background: #0f172a;
+  --nani-shop-color-surface: #111827;
+  --nani-shop-color-border: #334155;
+  --nani-shop-color-shadow: rgba(0, 0, 0, 0.38);
+}
+
+/* Main application dark styling */
+
+:root[data-theme="dark"] body {
+  background-color: var(--nani-shop-color-background);
+}
+
+:root[data-theme="dark"] .nani-shop-main-header {
+  background: rgba(15, 23, 42, 0.92);
+}
+
+:root[data-theme="dark"] .nani-shop-navigation-link:hover,
+:root[data-theme="dark"] .nani-shop-navigation-link-active {
+  color: #c7d2fe;
+  background-color: rgba(99, 102, 241, 0.2);
+}
+
+:root[data-theme="dark"] .nani-shop-secondary-action {
+  background-color: #111827;
+}
+
+:root[data-theme="dark"] .nani-shop-home-visual {
+  border-color: #334155;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(99, 102, 241, 0.28) 0,
+      transparent 45%
+    ),
+    linear-gradient(
+      145deg,
+      #111827,
+      #1e293b
+    );
+}
+
+:root[data-theme="dark"] .nani-shop-visual-card {
+  border-color: rgba(148, 163, 184, 0.2);
+  color: var(--nani-shop-color-text);
+  background: rgba(30, 41, 59, 0.92);
+}
+
+:root[data-theme="dark"] .nani-shop-stage-placeholder {
+  border-color: #475569;
+  background-color: rgba(17, 24, 39, 0.78);
+}
+
+/* Dashboard dark styling */
+
+:root[data-theme="dark"] .nani-shop-dashboard-container {
+  background-color: #111827;
+}
+
+:root[data-theme="dark"] .nani-shop-dashboard-sidebar {
+  background:
+    linear-gradient(
+      180deg,
+      #172033 0%,
+      #111827 100%
+    );
+}
+
+:root[data-theme="dark"]
+  .nani-shop-dashboard-navigation-link:hover {
+  background-color: rgba(51, 65, 85, 0.75);
+}
+
+:root[data-theme="dark"] .nani-shop-dashboard-stat-card,
+:root[data-theme="dark"] .nani-shop-profile-card {
+  background-color: #172033;
+}
+
+:root[data-theme="dark"]
+  .nani-shop-dashboard-form-placeholder {
+  border-color: #475569;
+  background-color: #172033;
+}
+
+/* Mobile header */
+
+@media (max-width: 760px) {
+  .nani-shop-header-actions {
+    width: 100%;
+  }
+
+  .nani-shop-main-navigation {
+    flex: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .nani-shop-header-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .nani-shop-theme-toggle {
+    width: 100%;
+  }
+}
