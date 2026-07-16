@@ -24,14 +24,7 @@ function mergeProductBatches(
   currentData,
   nextData,
 ) {
-  /*
-   * When skip is 0, it is a fresh request:
-   * - Initial product load
-   * - New search
-   * - Cleared search
-   *
-   * Therefore, replace the previous products.
-   */
+  
   if (
     !currentData ||
     nextData.skip === 0
@@ -45,10 +38,7 @@ function mergeProductBatches(
   const nextProducts =
     nextData.products ?? [];
 
-  /*
-   * Map prevents duplicate product IDs while
-   * appending the next API batch.
-   */
+  
   const productsById = new Map(
     currentProducts.map((product) => [
       product.id,
@@ -72,13 +62,12 @@ function mergeProductBatches(
 }
 
 function ProductsPage() {
-  const [searchInput, setSearchInput] =
-    useState("");
+  const [
+    searchInput,
+    setSearchInput,
+  ] = useState("");
 
-  /*
-   * Remembers which query the current pagination
-   * belongs to and how many products to skip.
-   */
+  
   const [
     paginationState,
     setPaginationState,
@@ -96,13 +85,7 @@ function ProductsPage() {
   const activeSearchQuery =
     debouncedSearchInput.trim();
 
-  /*
-   * When the search query changes, the stored
-   * pagination query no longer matches.
-   *
-   * Therefore, skip automatically becomes 0.
-   * No useEffect or extra setState is required.
-   */
+ 
   const skip =
     paginationState.query ===
     activeSearchQuery
@@ -150,17 +133,10 @@ function ProductsPage() {
     data?.total ?? products.length,
   );
 
-  /*
-   * True while the user is still typing and
-   * useDebounce has not produced the latest value.
-   */
   const isDebouncing =
     searchInput.trim() !==
     activeSearchQuery;
 
-  /*
-   * skip 0 means initial loading or a fresh search.
-   */
   const isFreshRequest =
     skip === 0;
 
@@ -245,7 +221,7 @@ function ProductsPage() {
           )}
       </div>
 
-      {/* Product search */}
+      {/* Search section */}
 
       <div className="nani-shop-product-search-section">
         <label
@@ -346,7 +322,7 @@ function ProductsPage() {
         />
       )}
 
-      {/* Empty products/search state */}
+      {/* Empty state */}
 
       {!loading &&
         !error &&
@@ -410,8 +386,6 @@ function ProductsPage() {
           </div>
 
           <div className="nani-shop-products-load-more-section">
-            {/* Load More failure */}
-
             {hasLoadMoreError && (
               <div
                 className="nani-shop-products-load-more-error"
@@ -433,8 +407,6 @@ function ProductsPage() {
               </div>
             )}
 
-            {/* Load More button */}
-
             {!hasLoadMoreError &&
               !isDebouncing &&
               hasMoreProducts && (
@@ -453,8 +425,6 @@ function ProductsPage() {
                       : "Load More Products"}
                 </button>
               )}
-
-            {/* End message */}
 
             {!hasLoadMoreError &&
               !isDebouncing &&
